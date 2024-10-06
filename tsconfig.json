@@ -16,6 +16,11 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "../../AppData/Local/JetBrains/WebStorm2021.2/javascript/typings/jest/29.5.13/node_modules/@types/jest/index.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
