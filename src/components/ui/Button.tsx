@@ -3,13 +3,18 @@ import React, {ReactNode, MouseEventHandler} from "react";
 interface ButtonProps {
   children: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  type?: "button" | "reset" | "submit";
+  htmlType?: "button" | "reset" | "submit";
+  type?: "primary" | "outline";
 }
 
-const Button = ({children, type = 'button', onClick = () => {}}: ButtonProps) => {
+const Button = ({children, htmlType = 'button', type = 'primary', onClick = () => {}}: ButtonProps) => {
+  const types = {
+    primary: 'bg-blue-500 text-white hover:bg-blue-600',
+    outline: 'bg-white text-blue-500 hover:bg-blue-500 hover:text-white border border-blue-500',
+  }
 
   return (
-    <button type={type} onClick={onClick} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+    <button type={htmlType} onClick={onClick} className={`mt-4 px-4 py-2 rounded ${types[type]}`}>
       {children}
     </button>
   )

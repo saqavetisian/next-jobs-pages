@@ -35,7 +35,7 @@ const Drawer = ({
             >
               <div
                 className={clsx(
-                  "w-[400px] pointer-events-auto relative w-full h-full transform transition ease-in-out duration-500",
+                  "max-w-[400px] w-full pointer-events-auto relative w-full h-full transform transition ease-in-out duration-500",
                   {["translate-x-full"]: !open},
                   {["translate-x-0"]: open}
                 )}

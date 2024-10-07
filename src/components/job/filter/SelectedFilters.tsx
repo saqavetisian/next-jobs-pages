@@ -35,6 +35,10 @@ const SelectedFilters = () => {
     })
   }, [])
 
+  const handleCancel = () => {
+    setIsDrawerOpen(false)
+  }
+
   return (
     <div className="flex gap-4 items-center">
       <div>
@@ -46,7 +50,7 @@ const SelectedFilters = () => {
       </div>
       <TagList tags={tags} onRemove={onRemove} />
       <Drawer open={isDrawerOpen} setOpen={setIsDrawerOpen}>
-        <div className="w-[400px]">
+        <div className="w-[300px] max-w-full">
           <h2 className="text-center font-semibold mb-4 text-xl">
             Advanced filter
           </h2>
@@ -60,8 +64,11 @@ const SelectedFilters = () => {
               </p>
             </div>
             <Input name="postedAt" label="Posted at" type="date" />
-            <div className="fixed bottom-4 flex justify-center left-1/2 -translate-x-1/2	">
-              <Button type="submit">
+            <div className="fixed gap-4 bottom-4 flex justify-center left-1/2 -translate-x-1/2	">
+              <Button htmlType="button" type="outline" onClick={handleCancel}>
+                cancel
+              </Button>
+              <Button htmlType="submit">
                 apply
               </Button>
             </div>
